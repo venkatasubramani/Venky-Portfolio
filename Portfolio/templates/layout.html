@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<link type="text/css" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js'></script>
+    <link rel="stylesheet" media="all" href="{{ url_for('static', filename='layout.css')}}">
+<script  src="{{ url_for('static', filename='layout.js')}}" data-turbolinks-track="reload"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Venky's Portfolio</title>
+</head>
+<body style="background:#A9A9A9;">
+
+<!-- Icon Bar (Sidebar - hidden on small screens) -->
+<nav class="sidebar bar-block small hide-small nav-center">
+
+  <a href="/home" class="bar-item buttons padding-large black">
+    <i class="fa fa-home xxlarge"></i>
+    <p>HOME</p>
+  </a>
+  <a href="/edu" class="bar-item buttons padding-large black">
+    <i class="fa fa-graduation-cap xxlarge"></i>
+    <p>EDUCATION</p>
+  </a>
+  <a href="/exp" class="bar-item buttons padding-large black">
+    <i class="fa fa-suitcase xxlarge"></i>
+    <p>EXPERIENCE</p>
+  </a>
+  <a href="/skillset" class="bar-item buttons padding-large black">
+    <i class="fa fa-wrench xxlarge"></i>
+    <p>SKILLS</p>
+  </a>
+    <a href="/hobbies" class="bar-item buttons padding-large black">
+    <i class="fa fa-hourglass xxlarge"></i>
+    <p>HOBBIES</p>
+  </a>
+</nav>
+
+<div class="top hide-large hide-medium" id="myNavbar">
+  <div class="bar black opacity hover-opacity-off nav-center small">
+    <a href="home" class="bar-item buttons" style="width:25% !important">HOME</a>
+    <a href="edu_exp" class="bar-item buttons" style="width:25% !important">EDU & EXP</a>
+    <a href="skillset" class="bar-item buttons" style="width:25% !important">SKILLS</a>
+    <a href="hobbies" class="bar-item buttons" style="width:25% !important">HOBBIES</a>
+  </div>
+</div>
+<div class="padding-large" id="main">
+
+    <header class="container padding-32 nav-center" >
+        <h3><span class="hide-small">I'm</span> Venkatasubramani </h3>
+        <p>ML Engineer and Web Developer.</p>
+        <a target="_blank" href="https://www.instagram.com/__root5__"><i class="fa fa-instagram hover-opacity"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/vs√5"><i class="fa fa-linkedin hover-opacity"></i><a/>
+        <a target="_blank" href="https://www.twitter.com/Venkata34919843"><i class="fa fa-twitter hover-opacity"></i></a>
+        <a target="_blank" href="https://github.com/venkatasubramani"><i class="fa fa-github hover-opacity"></i></a>
+        <button class="black">
+            <a target="_blank" href="/static/Venky_resume.pdf"><i class="fa fa-download"></i> Download Resume </a>
+        </button>
+    </header>
+
+    <div class="Container" style="background:#A9A9A9;">
+
+               {% block content %}
+                {% endblock %}
+
+    </div>
+    <div class="Container">
+        <div class="row">
+            <div class="Container center">
+                <div class="row nav-center">
+                    <div class="col-md-6">
+                        <i class="fa fa-phone nav-center" aria-hidden="true">+919994329789</i>
+                    </div>
+                    <div class="col-md-6">
+                       <i class="fa fa-envelope nav-center" aria-hidden="true">venkykasprov@gmail.com</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    google.charts.load('current', {'packages':['corechart','timeline','table']});
+google.charts.setOnLoadCallback(drawbarChart);
+google.charts.setOnLoadCallback(drawStudyChart);
+google.charts.setOnLoadCallback(drawWorkChart);
+google.charts.setOnLoadCallback(drawpieChart);
+google.charts.setOnLoadCallback(drawWorkTable);
+google.charts.setOnLoadCallback(drawStudyTable);
+      function drawStudyTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Organization');
+        data.addColumn('string', 'Course');
+        data.addColumn('string', 'Period');
+        data.addRows([
+          ['Sri Sairam ENgineering College','B.E EEE','2014 Aug - 2018 June'],
+          ['DAV Bhel School Ranipet','Math/CS','2012 Aug - 2014 May'],
+        ]);
+        options=
+        {
+        textcolor: 'black',
+        showRowNumber: true,
+        width: '100%',
+        height: '100%'
+        }
+        var table = new google.visualization.Table(document.getElementById('edu_tab'));
+
+        table.draw(data,options);
+      }
+      function drawWorkTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Organization');
+        data.addColumn('string', 'Role');
+        data.addColumn('string', 'Period');
+        data.addRows([
+          ['Tata Consultancy Services ltd','ML Engineer','2020 May - present'],
+          ['Tata Consultancy Services ltd','.Net Developer','2018 June - 2020 May'],
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('exp_tab'));
+
+        table.draw(data, {title:'Experience',showRowNumber: true, width: '100%', height: '100%'});
+      }
+      function drawpieChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hobbies', 'More likely to do'],
+          ['Play chess',     30],
+          ['Watch youtube',      50],
+          ['Scroll instagram feeds',  20],
+          ['Like LinkedIn posts', 30],
+          ['Go for a walk',    20],
+          ['Read Medium blogs', 8]
+        ]);
+
+        var options = {
+          title: 'My Hobbies that are more likey to do',
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('hobby_chart'));
+        chart.draw(data, options);
+      }
+function drawStudyChart() {
+    var container = document.getElementById('edu');
+    var timechart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'place' });
+    dataTable.addColumn({ type: 'string', id: 'Role' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+      [ 'High School', 'Dav Bhel School Ranipet', new Date(2012, 7, 30), new Date(2014, 4, 30) ],
+      [ 'B.E EEE','Sri Sairam Engineering College', new Date(2014, 7, 29), new Date(2018, 5, 1) ],
+      ]);
+
+    var options = {
+      timeline: { groupByRowLabel: false }
+    };
+
+    timechart.draw(dataTable, null);
+  }
+function drawWorkChart() {
+    var container = document.getElementById('exp');
+    var timechart = new google.visualization.Timeline(container);
+    var dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'place' });
+    dataTable.addColumn({ type: 'string', id: 'Role' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+      [ '.Net Devloper ',' Tata Consultancy Services', new Date(2018, 6, 16), new Date(2020, 5,22 ) ],
+      [ 'ML Engineer  ','Tata Consultancy Services', new Date(2020, 5, 25), new Date()]
+      ]);
+
+    var options = {
+      timeline: { groupByRowLabel: false }
+    };
+
+    timechart.draw(dataTable, null);
+  }
+var chart;
+function drawbarChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Skill', 'Rtg'],
+  ['Python',5],
+  ['Flask',4],
+  ['Machine Learning',4],
+  ['Sql',5],
+  ['Html',4],
+  ['css',3],
+  ['js',2],
+  ['Deep Learning',2]
+]);
+
+var options = {
+            title: 'Skillset',
+            explorer: { axis: 'horizontal' }
+};
+
+ chart = new google.visualization.BarChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+  google.visualization.events.addListener(chart, 'onmouseover', barMouseOver);
+    google.visualization.events.addListener(chart, 'onmouseout', barMouseOut);
+
+}
+ function barMouseOver(e) {
+    chart.setSelection([e]);
+  }
+
+  function barMouseOut(e) {
+    chart.setSelection([{'row': null, 'column': null}]);
+  }
+$(window).resize(function() {
+    if(this.resizeTO) clearTimeout(this.resizeTO);
+    this.resizeTO = setTimeout(function() {
+        $(this).trigger('resizeEnd');
+    }, 500);
+});
+
+//redraw graph when window resize is completed
+$(window).on('resizeEnd', function() {
+    drawbarChart();
+    drawpieChart();
+});
+if (screen && screen.width > 900) {
+$(function() {
+  /* NOTE: hard-refresh the browser once you've updated this */
+  $(".typed").typed({
+    strings: [
+      "python venky.py<br/>" +
+      ">$ ML engineer <br/> ^100" +
+      ">$ Chess Player <br/> ^100" +
+      ">$ Tech Enthusiast <br/> ^100" +
+      ">$ very rarely write blogs <br/> ^300" +
+      ">$ alias: Jagan <br/>"
+    ],
+    showCursor: true,
+    cursorChar: '_',
+    autoInsertCss: true,
+    typeSpeed: 0.001,
+    startDelay: 50,
+    loop: false,
+    showCursor: false,
+    onStart: $('.message form').hide(),
+    onStop: $('.message form').show(),
+    onTypingResumed: $('.message form').hide(),
+    onTypingPaused: $('.message form').show(),
+    onComplete: $('.message form').show(),
+    onStringTyped: function(pos, self) {$('.message form').show();},
+  });
+  $('.message form').hide()
+});
+}
+
+if (screen && screen.width < 900) {
+$(function() {
+  /* NOTE: hard-refresh the browser once you've updated this */
+  $(".typed").typed({
+    strings: [
+      "install venky.apk<br/>" +
+      "installing.....<br/>" +
+      "venky.apk installed successfuly!<br/>" +
+      ">$ ML engineer <br/> ^100" +
+      ">$ Chess Player <br/> ^100" +
+      ">$ Tech Enthusiast <br/> ^100" +
+      ">$ very rarely write blogs <br/> ^300" +
+      ">$ alias: Jagan <br/>"
+    ],
+    showCursor: true,
+    cursorChar: '_',
+    autoInsertCss: true,
+    typeSpeed: 0.001,
+    startDelay: 50,
+    loop: false,
+    showCursor: false,
+    onStart: $('.message form').hide(),
+    onStop: $('.message form').show(),
+    onTypingResumed: $('.message form').hide(),
+    onTypingPaused: $('.message form').show(),
+    onComplete: $('.message form').show(),
+    onStringTyped: function(pos, self) {$('.message form').show();},
+  });
+  $('.message form').hide()
+});
+}
+</script>
+
+</body>
+</html>

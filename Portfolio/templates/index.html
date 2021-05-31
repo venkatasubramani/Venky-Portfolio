@@ -1,0 +1,34 @@
+{%extends "layout.html" %}
+{%block content%}
+<div class="Container">
+    <div class="row" >
+        <div class="Container ">
+            <section id="terminal">
+                <div id="terminal-container">
+                    <div class="terminal">
+                        <div class="window-title">
+                            <div class="win-buttons">
+                                <a id="close" class="button" href="#"></a>
+                                <a id="min" class="button" href="#"></a>
+                                <a id="max" class="button" href="#"></a>
+                            </div>
+                            <span class="title">~VS~</span>
+                        </div>
+                        <div class="message">
+                            <span class='prompt'><span class='user'>venky</span><span class="at">@</span><span
+                                    class="path">/home/venky/</span>>$</span>
+                            <span class="typed"></span>
+                            <form>>$<input type="text" name="response"/></form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+    window.setTimeout(function () {
+  window.location.reload();
+}, 10000);
+</script>
+{% endblock %}
