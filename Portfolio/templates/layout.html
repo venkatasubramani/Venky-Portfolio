@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <link type="text/css" rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -16,10 +16,10 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Venky's Portfolio</title>
 </head>
-<body style="background:#A9A9A9;">
+<body class="black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="sidebar bar-block small hide-small nav-center">
+<nav class="sidebar bar-block small hide-small black nav-center">
 
   <a href="/home" class="bar-item buttons padding-large black">
     <i class="fa fa-home xxlarge"></i>
@@ -54,18 +54,16 @@
 <div class="padding-large" id="main">
 
     <header class="container padding-32 nav-center" >
-        <h3><span class="hide-small">I'm</span> Venkatasubramani </h3>
+        <span class="hide-large hide-medium"><hr></span>
+        <div class="typing"> <h2 style="font-family: "Lucida Console", "Courier New", monospace;">Hi, I'm <span style="color:blue">Venkatasubramani</span> </h2></div>
+
         <p>ML Engineer and Web Developer.</p>
-        <a target="_blank" href="https://www.instagram.com/__root5__"><i class="fa fa-instagram hover-opacity"></i></a>
-        <a target="_blank" href="https://www.linkedin.com/in/vs√5"><i class="fa fa-linkedin hover-opacity"></i><a/>
-        <a target="_blank" href="https://www.twitter.com/Venkata34919843"><i class="fa fa-twitter hover-opacity"></i></a>
-        <a target="_blank" href="https://github.com/venkatasubramani"><i class="fa fa-github hover-opacity"></i></a>
-        <button class="black">
-            <a target="_blank" href="/static/Venky_resume.pdf"><i class="fa fa-download"></i> Download Resume </a>
-        </button>
+        <div class="black">
+            <a target="_blank" href="/static/Venky_resume.pdf"><i class="share fa fa-download hover-opacity"></i> Resume/CV </a>
+        </div>
     </header>
 
-    <div class="Container" style="background:#A9A9A9;">
+    <div class="Container black">
 
                {% block content %}
                 {% endblock %}
@@ -75,8 +73,15 @@
         <div class="row">
             <div class="Container center">
                 <div class="row nav-center">
+                    <a target="_blank" href="https://www.instagram.com/__root5__"><i class="share fab fa-instagram-square hover-opacity"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/vs√5"><i class="share fab fa-linkedin hover-opacity"></i><a/>
+        <a target="_blank" href="https://www.twitter.com/Venkata34919843"><i class="share fab fa-twitter-square hover-opacity"></i></a>
+        <a target="_blank" href="https://github.com/venkatasubramani"><i class="share fab fa-github-square hover-opacity"></i></a>
+
+                </div>
+                <div class="row nav-center">
                     <div class="col-md-6">
-                        <i class="fa fa-phone nav-center" aria-hidden="true">+919994329789</i>
+                        <i class="fa fa-phone nav-center" aria-hidden="true">+91-9994329789</i>
                     </div>
                     <div class="col-md-6">
                        <i class="fa fa-envelope nav-center" aria-hidden="true">venkykasprov@gmail.com</i>
@@ -86,6 +91,8 @@
         </div>
     </div>
 </div>
+
+
 <script>
     google.charts.load('current', {'packages':['corechart','timeline','table']});
 google.charts.setOnLoadCallback(drawbarChart);

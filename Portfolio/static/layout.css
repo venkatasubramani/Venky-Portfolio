@@ -75,7 +75,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #terminal .terminal .window-title .win-buttons {
   position: relative;
   width: 5%;
-  left: -1px;
+  left: 1px;
   float: left;
   margin: 0;
 }
@@ -334,4 +334,9 @@ viewport width]) / ([maximum viewport width] - [minimum viewport width])));
   padding: 10px;
 }
 
+.share {
+  display: inline-block;
+  color: #0099cc;
+  font-size: 50px;
+}
 
