@@ -16,7 +16,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <title>Venky's Portfolio</title>
 </head>
-<body class="black">
+<body id="myFrame" >
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="sidebar bar-block small hide-small black nav-center">
@@ -41,29 +41,45 @@
     <i class="fa fa-hourglass xxlarge"></i>
     <p>HOBBIES</p>
   </a>
+
+
+
 </nav>
 
 <div class="top hide-large hide-medium" id="myNavbar">
-  <div class="bar black opacity hover-opacity-off nav-center small">
+  <div class="bar black  nav-center small">
     <a href="home" class="bar-item buttons" style="width:25% !important">HOME</a>
     <a href="edu_exp" class="bar-item buttons" style="width:25% !important">EDU & EXP</a>
     <a href="skillset" class="bar-item buttons" style="width:25% !important">SKILLS</a>
     <a href="hobbies" class="bar-item buttons" style="width:25% !important">HOBBIES</a>
   </div>
 </div>
+
+
 <div class="padding-large" id="main">
 
     <header class="container padding-32 nav-center" >
-        <span class="hide-large hide-medium"><hr></span>
-        <div class="typing"> <h2 style="font-family: "Lucida Console", "Courier New", monospace;">Hi, I'm <span style="color:blue">Venkatasubramani</span> </h2></div>
+<span class="hide-large hide-medium"><hr></span>
+        <div class="row switch_view" style="float:left;">
+                <label class="switch" >
+                <input type="checkbox" id="theme-switcher">
+                <span class="slider round"></span>
+            </label>
+        <p> Enable Dark Mode!</p>
+        </div>
 
-        <p>ML Engineer and Web Developer.</p>
-        <div class="black">
+        <div class="container">
+            <div> <h2> <span class="hide-small">Hi, I'm</span>  <span style="color:blue">Venkatasubramani</span> </h2></div>
+
+            <p>ML Engineer and Web Developer.</p>
+        </div>
+
+        <div>
             <a target="_blank" href="/static/Venky_resume.pdf"><i class="share fa fa-download hover-opacity"></i> Resume/CV </a>
         </div>
     </header>
 
-    <div class="Container black">
+    <div class="Container">
 
                {% block content %}
                 {% endblock %}
@@ -297,6 +313,7 @@ $(function() {
   $('.message form').hide()
 });
 }
+
 </script>
 
 </body>
