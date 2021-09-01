@@ -15,7 +15,7 @@ function myFunction() {
         document.getElementById("theme-switcher").checked = true;
 
     }
-    else if(localStorage.getItem('dark')=="light"){
+    else {
     document.documentElement.setAttribute("data-theme", "light");
         document.getElementById("theme-switcher").checked = false;
     }
